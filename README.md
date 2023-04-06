@@ -7,7 +7,7 @@
 -----------------------------------
 ## Exercise 2 - Product Sales
 
-We have the following tables organized in a database as follows:
+A Database is organized as follows:
 
     * customers
         * id
