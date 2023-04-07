@@ -79,9 +79,25 @@ It might be a good idea to also add the customers information we are mostly inte
 
 5. What would you change if the amount of data is too big to run these queries?
 
-One thing we can do to improve performances is to partitioning the data following a certain criteria; for example we can partition the **customers** data based on the country of origin, or partition the **order** data based on the datetime of each order. Another thing we can do is to optimize the queries so that we minimize the number of rows scanned, or caching the most frequent queries, so that we don't need to run them each time. It is also possible to apply some data compression techniques to reduce the size of the database, but this will also slow down INSERT operations.
+One thing we can do to improve performances is to partitioning the data in various database or tables following a certain criteria; for example we can partition the **customers** data based on the country of origin, or partition the **order** data based on the datetime of each order. Another thing we can do is to optimize the queries so that we minimize the number of rows scanned, or caching the most frequent queries, so that we don't need to run them each time. It is also possible to apply some data compression techniques to reduce the size of the database, but this will also slow down INSERT operations.
 
 ---------------------------
 
 ## Exercise 3 - Machine Translation
 
+Suppose you work for a company that offers Machine Translation to its customers.
+You have access to a large amount of translation data (i.e., parallel files containing a sentence in a source language and the corresponding translation in the target language). Some of this data comes from public datasets, others have been produced by professional translators working for your own company.
+
+1. How would you design a data pipeline for a Machine Translation system?
+
+The first thing to do is to clean the data from possible duplicates, empty or irrelevant files. 
+After this we need to preprocess the source data (not the target, since we'll use it as a reference and evaluate the machine translation), by lowercasing, tokenizing and normalizing the text, while also removing unwanted characters; we might also need to vectorize the tokens, depending on the architecture of our model.
+Then we'll feed this cleaned and preprocessed source data into a Machine Learning Model capable of generating text (such as a Transformer Neural Network) and compare the generated data to the target data to evaluate the loss and optimizing the model.
+
+Some of the main challenges of this process are:
+* Making sure we are dealing with **high quality data**, with good translations and a perfect allignment between source and target;
+* The **high volume data** nedeed for machine translation can be difficult to deal with, especially with complex and deep models;
+ 
+
+
+2. What would you do to collect new and good quality data from the web?
