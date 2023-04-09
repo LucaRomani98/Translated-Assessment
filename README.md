@@ -1,4 +1,4 @@
-# Technical-Interview
+# Translated Data Science Assessment
 
 ## Exercise 1 - Bank Customer Churn Prediction
 
