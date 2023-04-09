@@ -2,7 +2,7 @@
 
 ## Exercise 1 - Bank Customer Churn Prediction
 
-
+The Code was written and commented using a Python Notebook, and is contained in the file **Bank Customer Churn Prediction.ipynb**; the dataset used can be found in the **data** folder.
 
 -----------------------------------
 ## Exercise 2 - Product Sales
